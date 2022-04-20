@@ -1,0 +1,17 @@
+.Footer{
+    width: 100vw;
+    height: 50px;
+    position:absolute;
+    bottom:0;
+    text-align: center;
+    border-top: 2px solid rgba(28, 110, 164, 0.152);
+}
+.social_link:link{
+    color: aliceblue;
+}
+.social_link:visited{
+    color: rgb(232, 217, 217);
+}
+.social_link:hover{
+    color: rgb(11, 38, 62);
+}

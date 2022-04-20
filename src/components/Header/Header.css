@@ -1,0 +1,7 @@
+.Header{
+    background-color: #242f44;
+    width: 100vw;
+    height: 50px;
+    box-shadow: 1px 5px 15px 2px rgba(0, 0, 0, 0.042);
+    border-bottom: 1px solid #0000006d;
+}

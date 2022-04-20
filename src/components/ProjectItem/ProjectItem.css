@@ -1,0 +1,9 @@
+.ProjectItem{
+    border-radius: 10px;
+    border: 1px solid #1c62a47e;
+    padding: 3em;
+    margin-bottom: 1em;
+}
+.ProjectItem > h4{
+    margin: 0;
+}

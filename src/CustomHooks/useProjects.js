@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:8000/";
 const useProjects = () => {
   const [projects, setProjects] = useState([]);
   const [error, setError] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       await fetch(`${BASE_URL + "api/v1/projects"}`)
@@ -12,6 +13,7 @@ const useProjects = () => {
             setError(data.error)
           } else {
             setProjects(data.items)
+            setError([]);
           }
         })
         .catch((error) => {
@@ -19,7 +21,7 @@ const useProjects = () => {
         });
     };
     fetchData()
-  }, [projects,error]);
+  }, [isOpen]);
 
   const addProject = (name) =>{
     const requestOption = {
@@ -40,6 +42,8 @@ const useProjects = () => {
 
   }
   return {
+    isOpen,
+    setIsOpen,
     addProject,
     setProjects,
     projects,

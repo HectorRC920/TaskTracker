@@ -10,8 +10,7 @@ import { useState } from "react";
 import Modal from "./components/Modal";
 import ModalForm from "./components/ModalForm";
 function App() {
-  const {projects, error, addProject} = useProjects();
-  const [isOpen, setIsOpen] = useState(false);
+  const {projects, error, addProject,isOpen, setIsOpen} = useProjects();
   return (
     <div className="App">
       <Header />

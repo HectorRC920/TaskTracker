@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-const ModalForm = ({addProject}) => {
+const ModalForm = ({addProject, setIsOpen}) => {
     const [projectName , setProjectName] = useState(''); 
     const handleSubmit = (e) =>{
         e.preventDefault();
         addProject(projectName)
+        setIsOpen(false)
     }
     const handleChange = (e) => {
         setProjectName(e.target.value)

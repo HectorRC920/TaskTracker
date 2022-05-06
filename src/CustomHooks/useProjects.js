@@ -20,7 +20,27 @@ const useProjects = () => {
     };
     fetchData()
   }, [projects,error]);
+
+  const addProject = (name) =>{
+    const requestOption = {
+      method: 'POST',
+      body : JSON.stringify({
+        name: name
+      }),
+      redirect: "follow",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    }
+    fetch(`${BASE_URL + "api/v1/project/create"}`,requestOption)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
+
+  }
   return {
+    addProject,
     setProjects,
     projects,
     error,

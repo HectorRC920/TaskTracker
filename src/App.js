@@ -8,8 +8,9 @@ import "./App.css";
 import CreateProjectButton from "./components/CreateProjectButton";
 import { useState } from "react";
 import Modal from "./components/Modal";
+import ModalForm from "./components/ModalForm";
 function App() {
-  const {projects, error} = useProjects();
+  const {projects, error, addProject} = useProjects();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="App">
@@ -34,9 +35,10 @@ function App() {
       <>
         <Modal 
         isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        >
-          
+        setIsOpen={setIsOpen}>
+          <ModalForm
+            addProject={addProject}
+          />
         </Modal>
       </>
       }

@@ -2,17 +2,26 @@ import React, { useEffect, useState } from "react";
 const BASE_URL = "http://localhost:8000/";
 const useProjects = () => {
   const [projects, setProjects] = useState([]);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       await fetch(`${BASE_URL + "api/v1/projects"}`)
         .then((response) => response.json())
-        .then((data) => setProjects(data.items));
+        .then((data) => {
+          if(data.error){
+            setError(data.error)
+          } else {
+            setProjects(data.items)
+          }
+        })
+        .catch((error) => {
+          setError(error)
+        });
     };
     fetchData()
-    .catch((error) => setError(true));
-  }, []);
+  }, [projects,error]);
   return {
+    setProjects,
     projects,
     error,
   };

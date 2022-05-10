@@ -14,8 +14,6 @@ function App() {
     addProject,
     isOpen, 
     setIsOpen,
-    isDeleted,
-    setIsDeleted,
     deleteProject,
   } = useProjects();
   return (

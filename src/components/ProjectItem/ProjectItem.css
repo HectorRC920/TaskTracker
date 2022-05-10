@@ -7,3 +7,9 @@
 .ProjectItem > h4{
     margin: 0;
 }
+.TitleProject--deleted{
+    text-decoration: line-through;
+}
+.TitleName--deleted{
+    text-decoration: line-through;
+}
